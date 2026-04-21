@@ -162,9 +162,13 @@ main {
 }
 .texto1{
     width: 100%;
-    padding: 100px;
+    padding-left: 200px;
+     padding-right: 200px;
     padding-bottom: 0px;
+    padding-top: 100px;
     text-align: center;
+    font-size: 25px;
+
 }
 .nossasmarcas{
     display: flex;
