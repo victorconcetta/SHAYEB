@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>J. SHAYEB CONCETTA CLONE</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+    <div class="topgap"></div>
+
+    <main id="conteudo-principal"></main>
+
+    <div id="footer-placeholder"></div>
+
+    <div class="faleconosco">
+        <a href=mailto:jshayeb@jshayeb.com.br><img src="./assets/btfaleconosco.png" class="imgfaleconosco"></a>
+    </div>
+    <script>
+        function loadComponent(id, file) {
+            return fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                });
+        }
+        Promise.all([
+            loadComponent('header-placeholder', 'menu.html'),
+            loadComponent('footer-placeholder', 'footer.html'),
+            loadComponent('conteudo-principal', 'principal.html')
+        ]);
+
+        function navegar(url) {
+            fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('conteudo-principal').innerHTML = html;
+                    window.scrollTo(0, 0);
+                });
+        }
+    </script>
+</body>
+
+</html>
