@@ -10,6 +10,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
 }
 #header-placeholder {
     position: sticky;
@@ -39,11 +42,18 @@ body {
 .superior {
   position: fixed;
   display: flex;
-  width: 100%;
   height: 130px;
   min-height: 100px;
   background-color: #e5e5e5;
   align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: auto;
+
 }
 
 .logosup {
@@ -85,8 +95,8 @@ body {
   list-style: none;
   flex: 1;
   align-items: center;
-  padding: 0px 145px;
-  gap: 10px;
+  padding: 0px 5vw;
+  gap: 1vw;
 }
 
 .lisup {
@@ -109,13 +119,6 @@ body {
 .lisup:hover {
   font-weight: 999;
   cursor: pointer;
-}
-
-.iframecontainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 130px;
 }
 
 .topgap {
@@ -144,12 +147,24 @@ body {
   overflow: hidden;
   margin-top: 0;
 }
-
-svg {
-  z-index: 900;
+.containervideo video {
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+svg {
+  display: block;
+  z-index: 998;
+  position: absolute;
   left: 0;
+  bottom: -3px;
+
 }
 
 main {
@@ -193,9 +208,9 @@ main {
 .bolas{
   display: flex;
   justify-content: space-around;
-  padding: 0 200px;
+  padding: 0 10vw;
   width: 100%;
-  gap: 10px;
+  gap: 1vw;
 }
 .bolas img:hover{
   transform: scale(1.05);
@@ -271,7 +286,6 @@ color: #5c7f94;
   text-align: left;
   height: 100%;
   justify-content: flex-start;
-  min-width: 20%;
   font-size: clamp(8px, 1vw, 30px);
 
 }
@@ -287,31 +301,15 @@ color: #5c7f94;
   width: 18%;
 }
 
-.footer {
-  font-family: "montserrat";
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 40px;
-  width: 100%;
-  height: 300px;
-  padding: 0 140PX;
-  box-sizing: border-box;
-  background-color: #5c7f94;
-  flex-wrap: wrap;
-  
+/*--------------------------------------- rodape aqui -----------------------------------*/
+
+.containerfooter{
+  max-width: 100vw;
+   background-color: #5c7f94;
 }
-.footer a{
-  text-decoration: none;
-  color: #e5e5e5;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.footer a:hover{
-  text-decoration: none;
-  color: #aeaeae;
-  cursor: pointer;
-}
+
 .divfooterlogo {
+  max-width: 100%;
   display: flex;
   justify-content: center;
   padding-top: 80px;
@@ -321,6 +319,30 @@ color: #5c7f94;
 
 .footerlogo {
   height: 80%;
+}
+.footergrid {
+  font-family: "montserrat";
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 2vw; 
+  width: 100%;
+  min-height: 300px;
+  padding: 60px 10vw;
+  box-sizing: border-box;
+  background-color: #5c7f94;
+}
+.footergrid a{
+  text-decoration: none;
+  color: #e5e5e5;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.footergrid a:hover{
+  text-decoration: none;
+  color: #aeaeae;
+  cursor: pointer;
 }
 
 .strong {
@@ -351,10 +373,7 @@ color: #5c7f94;
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 17px;
-  white-space: nowrap;
-  width: 100%;
   color: #e5e5e5;
-  
 }
 
 .colunamenu ul {
