@@ -21,6 +21,11 @@ body {
     background-color: #e5e5e5;
 }
 
+#conteudo-principal{
+  display: flex;
+  flex: 1 0 auto;
+}
+
 @font-face {
   font-family: "montserrat";
   src: url("./font/Montserrat-Regular.woff2") format("woff2"), url("./font/Montserrat-Regular.ttf") format("truetype");
@@ -137,6 +142,13 @@ body {
   width: 100%;
 }
 
+/* ----------- principal ------------*/
+
+main {
+  display: flex;
+  position: relative;
+}
+
 .containervideo {
   display: flex;
   position: relative;
@@ -167,11 +179,6 @@ svg {
 
 }
 
-main {
-  display: flex;
-  position: relative;
-}
-
 .principal {
   display: flex;
   padding-bottom: 50px;
@@ -184,7 +191,8 @@ main {
   box-sizing: border-box;
   font-family: "montserrat";
 }
-.texto1{
+.divtexto1{
+    display: flex;
     width: 100%;
     padding-left: 20vw;
      padding-right: 20vw;
@@ -270,36 +278,6 @@ object-fit: cover;
 .divsus:hover p{
 color: #5c7f94;
 }
-.red{
-  color: rgb(87, 0, 0);
-}
-.blue{
-  color: #5c7f94;
-}
-.green{
-  color: #39804b;
-}
-.coluna {
-  display: flex;
-  flex-direction: column;
-  color: #e5e5e5;
-  text-align: left;
-  height: 100%;
-  justify-content: flex-start;
-  font-size: clamp(8px, 1vw, 30px);
-
-}
-.rsoc{
-  display: flex;
-  width: 50%;
-  height: 30%;
-  justify-content:flex-start;
-  gap: 10%;
-  padding-bottom: 2vw;
-}
-.rsoc img{
-  width: 18%;
-}
 
 /*--------------------------------------- rodape aqui -----------------------------------*/
 
@@ -345,6 +323,47 @@ color: #5c7f94;
   cursor: pointer;
 }
 
+.coluna {
+  display: flex;
+  flex-direction: column;
+  color: #e5e5e5;
+  text-align: left;
+  height: 100%;
+  justify-content: flex-start;
+  font-size: clamp(8px, 1vw, 30px);
+
+}
+.rsoc{
+  display: flex;
+  width: 50%;
+  height: 30%;
+  justify-content:flex-start;
+  gap: 10%;
+  padding-bottom: 2vw;
+}
+.rsoc img{
+  width: 18%;
+}
+
+.colunamenu {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 17px;
+  color: #e5e5e5;
+}
+
+.colunamenu ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.colunamenu li {
+  margin-bottom: 5px;
+  font-size: clamp(12px, 0.8vw, 30px);
+}
+
+
+/*--------------- FONTES -----------*/
 .strong {
   font-weight: 900;
   font-size: clamp(12px, 1.0vw, 30px);
@@ -369,27 +388,95 @@ color: #5c7f94;
   margin: 0;
 }
 
-.colunamenu {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 17px;
-  color: #e5e5e5;
+.red{
+  color: rgb(87, 0, 0);
+}
+.blue{
+  color: #5c7f94;
+}
+.green{
+  color: #39804b;
 }
 
-.colunamenu ul {
-  list-style: none;
-  padding: 0px;
+.headingsub{
+  color:#727272;
+  font-family: "montserrat";
+  font-size: clamp(30px, 4vw ,60px)
+}
+/*--------------- SUBPAGINAS -----------*/
+
+.subpagina{
+  background-color:#cfcfcf;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  gap: 3vw;
+  padding: 10vw 7vw;
+  box-sizing: border-box;
+  flex: 1;
+}
+.subpagina div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex: 1 1 300px;
+  width: 35vw;
+  min-width: 300px;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  gap: 1.5vw;
+
+}
+.quemsomosimg{
+  width: 100%;
+  min-width: 200px;
+  height: auto;
+ object-fit: contain;
+}
+.quemsomosimg2{
+  width: 100%;
+  min-width: 200px;
+  height: auto;
+  object-fit: contain;
 }
 
-.colunamenu li {
-  margin-bottom: 5px;
-  font-size: clamp(12px, 0.8vw, 30px);
+.subpagina p{
+  font-family: "montserrat";
+  font-size: clamp(10px, 0.95vw ,20px);
+  margin-top: 0;
+  margin-bottom: 0px;
 }
-
+  .subpagina b{
+font-family: "Montserrat";
+font-weight: bold;
+  
+}
 
 /* RESPONSIVIDADE MOBILE VAI DA TRABAIO =) */
 
 @media (max-width: 768px){
   .superior{
     display:none;
+  }
+
+   .subpagina div{
+    flex-wrap: wrap;
+    max-width: 100%;
+    flex: 1 1 100%;
+    min-width: 100%;
+
+  }
+  .subpagina p{
+  font-family: "montserrat";
+  font-size: 5vw;
+  margin-top: 0;
+  margin-bottom: 0px;
   }
