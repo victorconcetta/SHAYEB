@@ -21,6 +21,14 @@ body {
 @font-face {
   font-family: "montserrat";
   src: url("./font/Montserrat-Regular.woff2") format("woff2"), url("./font/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "montserrat";
+    src: url("./font/Montserrat-Bold.woff2") format("woff2"), url(".font/Montserrat-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
@@ -58,6 +66,7 @@ body {
 
 .logosup img {
   width: 63%;
+  min-width: 200px;
 }
 
 .mainmenu {
@@ -66,7 +75,6 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "montserrat";
-  font-size: 17px;
   flex: 1;
   width: 50%;
 }
@@ -78,14 +86,16 @@ body {
   flex: 1;
   align-items: center;
   padding: 0px 145px;
+  gap: 10px;
 }
 
 .lisup {
   display: flex;
-  font-size: 16px;
+  font-size: clamp(10px, 1.1vw, 17px);
   position: relative;
   justify-content: center;
   align-items: center;
+  text-wrap-mode: nowrap;
 }
 
 .menudireita {
@@ -105,7 +115,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: black;
   margin-top: 130px;
 }
 
@@ -162,12 +171,13 @@ main {
 }
 .texto1{
     width: 100%;
-    padding-left: 200px;
-     padding-right: 200px;
+    padding-left: 20vw;
+     padding-right: 20vw;
     padding-bottom: 0px;
     padding-top: 100px;
     text-align: center;
-    font-size: 25px;
+    font-size: clamp(15px, 1.4vw, 30px);
+    justify-content: center;
 
 }
 .nossasmarcas{
@@ -176,8 +186,9 @@ main {
     width: 100%;
     height: 200px;
     padding-top: 0px;
-    font-size: 50px;
+    font-family: "tussilagorg-bold";
     font-weight: 900;
+    font-size: clamp(20px, 3vw, 50px);
 }
 .bolas{
   display: flex;
@@ -201,28 +212,93 @@ width: 90%;
   border-radius: 100px;
   align-items: center;
   justify-content: center;
+  min-width: 100px;
   aspect-ratio: 1 / 1;
+  
+}
+.sus_grid{
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0 12vw;
+  gap: 3vw;
+}
+.sus_grid p{
+  font-weight: bold;
+  font-size: 1vw;
+}
+.sus_grid img{
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s;
 }
 
+.divsus{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+.divsus div{
+display: flex;
+justify-content: center;
+width: 100%;
+overflow: hidden;
+border-radius: 100%;
+aspect-ratio: 1 / 1;
+}
+.divsus:hover img{
+ transform: scale(1.1);
+object-fit: cover;
+}
+.divsus:hover p{
+color: #5c7f94;
+}
+.red{
+  color: rgb(87, 0, 0);
+}
+.blue{
+  color: #5c7f94;
+}
+.green{
+  color: #39804b;
+}
 .coluna {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: #e5e5e5;
   text-align: left;
   height: 100%;
   justify-content: flex-start;
+  min-width: 20%;
+  font-size: clamp(8px, 1vw, 30px);
+
+}
+.rsoc{
+  display: flex;
+  width: 50%;
+  height: 30%;
+  justify-content:flex-start;
+  gap: 10%;
+  padding-bottom: 2vw;
+}
+.rsoc img{
+  width: 18%;
 }
 
 .footer {
   font-family: "montserrat";
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 40px;
   width: 100%;
   height: 300px;
   padding: 0 140PX;
   box-sizing: border-box;
   background-color: #5c7f94;
+  flex-wrap: wrap;
+  
 }
 .footer a{
   text-decoration: none;
@@ -248,22 +324,27 @@ width: 90%;
 }
 
 .strong {
-  font-weight: bold;
-  font-size: 20px;
+  font-weight: 900;
+  font-size: clamp(12px, 1.0vw, 30px);
+  margin: 0;
+  line-height: 1.4;
   margin: 0;
 }
 
 .strongb {
   font-weight: bold;
-  font-size: 30px;
+  font-size: clamp(16px, 1.7vw, 40px);
   margin: 20px 0;
+  line-height: 1.4;
+  margin: 0;
 
 }
 
 .regular {
   font-weight: 100;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: clamp(12px, 0.8vw, 30px);
+  line-height: 1.4;
+  margin: 0;
 }
 
 .colunamenu {
@@ -273,6 +354,7 @@ width: 90%;
   white-space: nowrap;
   width: 100%;
   color: #e5e5e5;
+  
 }
 
 .colunamenu ul {
@@ -282,4 +364,10 @@ width: 90%;
 
 .colunamenu li {
   margin-bottom: 5px;
+  font-size: clamp(12px, 0.8vw, 30px);
 }
+
+
+/* RESPONSIVIDADE MOBILE VAI DA TRABAIO =) */
+
+
