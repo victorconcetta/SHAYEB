@@ -389,4 +389,7 @@ color: #5c7f94;
 
 /* RESPONSIVIDADE MOBILE VAI DA TRABAIO =) */
 
-
+@media (max-width: 768px){
+  .superior{
+    display:none;
+  }
