@@ -693,3 +693,20 @@ margin-top: 20px;
   padding: 0;
 
 }
+
+/* ------------ menu hamburguinho (toggler) bora la ------------*/
+
+.hamburger{
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  margin-right: 40px;
+  gap: 6px;
+  justify-content: center;
+}
+.bar{
+  background: #5c7f94;
+  width: 30px;
+  height: 3px;
+}
