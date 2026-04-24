@@ -472,6 +472,12 @@ color: #5c7f94;
 }
 /*--------------- SUBPAGINAS -----------*/
 
+.headingsub{
+  color:#727272;
+  font-family: "montserrat";
+  font-size: clamp(25px, 4vw ,60px);
+  padding-bottom: 10px;
+}
 .subpagina{
   background-color:#cfcfcf;
   display: flex;
@@ -484,7 +490,7 @@ color: #5c7f94;
   min-width: 100%;
   height: auto;
   gap: 3vw;
-  padding: 10vw 7vw;
+  padding: 200px 10vw;
   box-sizing: border-box;
   flex: 1;
 }
@@ -517,9 +523,10 @@ color: #5c7f94;
 
 .subpagina p{
   font-family: "montserrat";
-  font-size: clamp(10px, 0.95vw ,20px);
+  font-size: clamp(14px, 0.95vw ,20px);
   margin-top: 0;
   margin-bottom: 0px;
+  color:#414141
 }
   .subpagina b{
 font-family: "Montserrat";
@@ -551,8 +558,8 @@ font-weight: bold;
   }
   .subpagina p{
   font-family: "montserrat";
-  font-size: 5vw;
-  margin-top: 0;
+  font-size: clamp(14px, 2vw , 2w);
+  margin-top: 10px;
   margin-bottom: 0px;
   }
 
@@ -716,7 +723,7 @@ font-size: clamp(14px, 3vw, 30px);
   gap: 10%;
   padding-bottom: 2vw;
 }
-rsoc img{
+.rsoc img{
   width: 60%;
 }
 
