@@ -18,7 +18,7 @@ body {
 #header-placeholder {
     position: sticky;
     top: 0;
-    z-index: 999; 
+    z-index: 900; 
     background-color: #e5e5e5;
 }
 
@@ -51,45 +51,47 @@ body {
   position: fixed;
   display: flex;
   height: 130px;
-  min-height: 100px;
+  min-height: 80px;
   background-color: #e5e5e5;
   align-items: center;
-  padding: 0 15vw;
   top: 0;
   left: 0;
   right: 0;
   max-width: 100vw;
   box-sizing: border-box;
   overflow: hidden;
-  width: auto;
+  width: 100vw;
   gap: 2vw;
-  
+  justify-content: space-evenly;
+  z-index: 1000;
 
 }
 
 .logosup {
   display: flex;
   height: 100%;
+  width: 260px;
   align-items: flex-start;
-  justify-content: center;
-  min-width: 300px;
+  justify-content: flex-end;
+  
 
 }
   
 .logosup img {
-  width: 90%;
-  min-width: 200px;
+  width: 100%;
+    width: 260px;
+
   
 }
 
 .mainmenu {
-    width: auto;
+
+  width: 850px;
   display: flex;
   height: 130px;
   justify-content: center;
   align-items: center;
   font-family: "montserrat";
-  flex: 1;
 
 }
 
@@ -101,31 +103,86 @@ body {
   align-items: center;
   padding: 0px 5vw;
   gap: 1vw;
+  width: 100%;
 }
 
 .lisup {
   display: flex;
-  font-size: clamp(12px, 0.8vw, 17px);
+  flex-direction: column;
+  font-size: 15px;
   position: relative;
   justify-content: center;
   align-items: center;
+  width: 135px;
   text-wrap-mode: nowrap;
   transition: 1s;
 }
+.lisup:hover{
+  font-weight: bold;
+cursor: pointer;
+}
 
+.div-menu-dropdown{
+  display: flex;
+  font-weight: 400;
+  position: fixed;
+  padding: 0px;
+  width: 170px;
+  height: auto;
+  background: #5c7f94;
+  top: 80px;
+  z-index: 1001;
+}
+.div-menu-dropdown::before {
+  content: '';
+  position: absolute;
+  inset: -20px 0 0 0;
+}
+.div-menu-dropdown ul{
+  list-style: none;
+  padding: 20px;
+  
+}
+.div-menu-dropdown li:not(:last-child){
+margin-bottom: 16px;
+}
+
+.div-menu-dropdown li a:hover{
+font-weight: bold;
+}
+
+.div-menu-dropdown li a {
+  position: relative;
+  z-index: 10002; 
+  display: block;
+  width: 100%;
+color: rgb(237, 238, 235);
+  text-decoration: none;
+  font-size: 14px;
+  
+}
 .menudireita {
   min-width: 80px;
   display: flex;
   height: 100%;
   justify-content: flex-start;
   align-items: center;
-  
 }
 
-.lisup:hover {
-  font-weight: 999;
-  cursor: pointer;
+#shayeb, #marcas, #produtos{
+  display: none;
 }
+
+#topshayeb:hover #shayeb {
+  display:flex
+}
+
+#topmarcas:hover #marcas {
+  display:flex
+}
+ #topprodutos:hover #produtos {
+  display:flex;
+ }
 
 .faleconosco {
   display: flex;
@@ -355,7 +412,7 @@ color: #5c7f94;
   padding-bottom: 2vw;
 }
 .rsoc img{
-  width: 18%;
+  width: 100px;
 }
 
 .colunamenu {
@@ -475,7 +532,7 @@ font-weight: bold;
 
 /* RESPONSIVIDADE MOBILE VAI DA TRABAIO =) */
 
-@media (max-width: 768px){
+@media (max-width: 900px){
   .ulsup{
    display: none;
   }
@@ -608,37 +665,8 @@ svg {
   transform-origin: bottom left;
 }
 
-.logosup {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: flex-start;
- 
-
-}
-
-.logosup img{
-  display: flex;
-  width: 50%;
-  min-width: 0;
-}
-
 .menudireita, .mainmenu{
   display: none;
-}
-
-.superior {
-  position: fixed;
-  display: flex;
-  height: 70px;
-  min-height: 70px;
-  background-color: #e5e5e5;
-  top: 0;
-  left: 0;
-  right: 0;
-  max-width: 100vw;
-  box-sizing: border-box;
-  padding-left: 8vw;
 }
 
 .containerfooter{
@@ -678,12 +706,15 @@ font-size: clamp(14px, 3vw, 30px);
   }
 .rsoc{
   display: flex;
-  width: 250px;
-
+  width: 200px;
   justify-content:flex-start;
   gap: 10%;
   padding-bottom: 2vw;
 }
+rsoc img{
+  width: 60%;
+}
+
 .colunamenu{
   width: 100%;
   display: flex;
@@ -703,12 +734,37 @@ font-size: clamp(14px, 3vw, 30px);
 
 /* ------------ menu hamburguinho (toggler) bora la ------------*/
 
+.superior {
+  position: fixed;
+  display: flex;
+  height: 70px;
+  min-height: 70px;
+  background-color: #e5e5e5;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0 5vw;
+}
+.logosup {
+  display: flex;
+  width: 150px;
+  min-width: 120px;
+  justify-content: flex-start;
+}
+
+.logosup img{
+  display: flex;
+  width: 100%;
+  min-width: 0;
+}
 .hamburger{
   display: flex;
   flex-direction: column;
   width: 40px;
   height: 40px;
-  margin-right: 40px;
   gap: 6px;
   justify-content: center;
 }
