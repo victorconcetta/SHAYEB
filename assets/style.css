@@ -539,6 +539,10 @@ font-weight: bold;
    display: none;
   }
 
+.subpagina{
+  padding-top: 100px;
+}
+
    .subpagina div{
     flex-wrap: wrap;
     max-width: 100%;
