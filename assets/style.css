@@ -153,7 +153,7 @@ font-weight: bold;
 
 .div-menu-dropdown li a {
   position: relative;
-  z-index: 10002; 
+  z-index: 1002; 
   display: block;
   width: 100%;
 color: rgb(237, 238, 235);
@@ -530,6 +530,10 @@ font-weight: bold;
   
 }
 
+.menulateral{
+  display: none;
+}
+
 /* RESPONSIVIDADE MOBILE VAI DA TRABAIO =) */
 
 @media (max-width: 900px){
@@ -655,7 +659,7 @@ aspect-ratio: 1 / 1;
 }
 svg {
   display: block;
-  z-index: 998;
+  z-index: 800;
   position: absolute;
   left: 0;
   bottom: -3px;
@@ -767,9 +771,70 @@ rsoc img{
   height: 40px;
   gap: 6px;
   justify-content: center;
+  z-index: 99999;
+  pointer-events: auto;
+  position: relative;
+  cursor: pointer;
 }
 .bar{
   background: #5c7f94;
   width: 30px;
   height: 3px;
 }
+.menulateral{
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  height: 100vh;
+  background: #f0f0f0;
+  z-index: 9999;
+  position: fixed;
+  overflow-y: auto;
+  left: -60vw; 
+  transition: 0.4s ease-in-out;
+
+}
+.menulateral.active {
+    left: 0;
+  }
+.menulateral ul{
+  list-style: none;
+}
+
+.lateral-dropdown-sub ul{
+  padding: 0px
+}
+.lateral-dropdown-sub ul a{
+  color: #7398af;
+  text-decoration: none;
+}
+.lateral-dropdown-sub ul li{
+border-bottom: 1px solid #7398af;
+border-top: 1px solid #7398af;
+margin-top: -1px;
+padding: 10px 0px 0px 5px;
+}
+.lateral-dropdown-sub ul li:hover{
+  color: #83b1cd;
+}
+#lateralheading{
+    color: #5c7f94;
+    text-decoration: none;
+font-weight: 900;
+font-size: 20px;
+display: block;
+padding-top: 25px;
+}
+
+#lateralheading:hover{
+  color: #6a91a9;
+}
+
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+    }

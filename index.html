@@ -18,7 +18,7 @@
     <div class="faleconosco">
         <a href=mailto:jshayeb@jshayeb.com.br><img src="./assets/btfaleconosco.png" class="imgfaleconosco"></a>
     </div>
-  <script>
+    <script>
         function loadComponent(id, file) {
             return fetch(file)
                 .then(response => response.text())
@@ -39,12 +39,12 @@
         }
 
         function navegar(event, urlOriginal) {
-            if (event.ctrlKey || event.metaKey) return; 
+            if (event.ctrlKey || event.metaKey) return;
             event.preventDefault();
 
             let pagina = urlOriginal.includes('?p=') ? urlOriginal.split('?p=')[1] : urlOriginal;
-            pagina = pagina.replace('.html', ''); 
-            
+            pagina = pagina.replace('.html', '');
+
             carregarConteudo(pagina);
             window.history.pushState({ pagina: pagina }, '', `index.html?p=${pagina}`);
         }
@@ -67,6 +67,24 @@
             window.history.replaceState({ pagina: pageToLoad }, '', window.location.href);
         });
     </script>
+
+    <script>
+        
+        document.addEventListener('click', function (e) {
+            const btn = e.target.closest('#hamburger');
+            const menu = document.querySelector('.menulateral');
+            if (btn) {
+                console.log("Clique detectado!");
+                btn.classList.toggle('active');
+                if (menu) {
+                    menu.classList.toggle('active');
+                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'initial';
+                }
+            }
+        });
+    </script>
+
+    
 </body>
 
 </html>
