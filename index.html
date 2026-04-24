@@ -68,22 +68,32 @@
         });
     </script>
 
-    <script>
-        
-        document.addEventListener('click', function (e) {
-            const btn = e.target.closest('#hamburger');
-            const menu = document.querySelector('.menulateral');
-            if (btn) {
-                console.log("Clique detectado!");
-                btn.classList.toggle('active');
-                if (menu) {
-                    menu.classList.toggle('active');
-                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'initial';
-                }
-            }
-        });
-    </script>
+<script>
+    document.addEventListener('click', function (e) {
+        const menu = document.querySelector('.menulateral');
+        const btn = document.querySelector('#hamburger');
 
+        // LÓGICA PARA ABRIR/FECHAR NO BOTÃO
+        const btnClick = e.target.closest('#hamburger');
+        if (btnClick) {
+            console.log("Botão hamburguer clicado!");
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'initial';
+        }
+
+        // LÓGICA PARA FECHAR AO CLICAR EM UM LINK
+        if (e.target.closest('.menulateral a')) {
+            console.log("Link do menu clicado!");
+            if (menu) {
+                // Em vez de style.left, apenas removemos a classe active
+                menu.classList.remove('active');
+                if(btn) btn.classList.remove('active');
+                document.body.style.overflow = 'initial';
+            }
+        }
+    });
+</script>
     
 </body>
 
