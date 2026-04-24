@@ -74,14 +74,12 @@ body {
   align-items: flex-start;
   justify-content: flex-end;
   
-
 }
   
 .logosup img {
   width: 100%;
     width: 260px;
 
-  
 }
 
 .mainmenu {
@@ -755,14 +753,15 @@ rsoc img{
 .logosup {
   display: flex;
   width: 150px;
-  min-width: 120px;
+  min-width: 150px;
   justify-content: flex-start;
+  flex-shrink: 0;
 }
 
 .logosup img{
-  display: flex;
+  display: block;
   width: 100%;
-  min-width: 0;
+  height: auto;
 }
 .hamburger{
   display: flex;
