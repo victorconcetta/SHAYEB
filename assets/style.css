@@ -785,13 +785,15 @@ rsoc img{
   display: flex;
   flex-direction: column;
   width: 60vw;
-  height: 100vh;
+  height: 100dvh;
   background: #f0f0f0;
   z-index: 9999;
   position: fixed;
   overflow-y: auto;
   left: -60vw; 
   transition: 0.4s ease-in-out;
+  top: 0px;
+  flex-shrink: 0;
 
 }
 .menulateral.active {
